@@ -4,9 +4,8 @@
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+  <book xml:id="MATH-1240-Calculus-2">
+    <title>MATH 1240 - Calculus 2</title>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
