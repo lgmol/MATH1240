@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-antiderivatives-and-indefinite-integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Antiderivatives and Indefinite Integrals</title>
+
+  <p> 
+    Calculus 1 was about the process of <em>differentiation</em> and its applications.
+    We start Calculus 2 by thinking about the reverse process to differentiation.
+    That is, given a function <m>f</m>,
+    we wish to find a function <m>F</m> whose derivative is <m>f</m>.
+    Such a function <m>F</m> is called an <em>antiderivative</em> of <m>f</m>, 
+    and the process of finiding an antiderivative is called <em>antidifferentiation</em>.
+  </p>
+
+  <p>
+    Why do we care about antidifferentiation?
+    Well, it turns out that antiderivatives are useful.  
+    For example, they can be used 
+    <ul>
+      <li>
+        <p>
+          to compute areas and volumes of various shapes and solids;
+        </p>
+      </li>
+      <li>
+        <p>
+          to compute the probabilities of certain random events in statistics; and
+        </p>
+      </li>
+      <li>
+        <p>
+          to compute quantities like displacement and work done in physics.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <definition xml:id="def-antiderivative">
+    <statement>
+      <p>
+        Let <m>f</m> be a function.  
+        We say that <m>F</m> is an <em>antiderivative</em> of <m>f</m> if 
+        <me>
+          F'(x)=f(x) \ \ \ \text{for all $x$ in the domain of $f$.}
+        </me>
+        
+      </p>
+    </statement>
+  </definition>
+
+  <exercise xml:id="exc-first-antiderivatives">
+
+    <title>
+      Finding antiderivatives
+    </title>
+    
+    <introduction>
+      <p>
+        Find an antiderivative of the given function.
+      </p>
+    </introduction>
+
+    <task>
+      <statement>
+        <p>
+          <m>f(x)=2x</m>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Can you think of a function whose derivative is <m>2x</m>?
+        </p>
+      </hint>
+      <answer>
+        <p>
+          <m>F(x)=x^2</m>
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Let <m>F(x)=x^2</m>.  Then <m>F'(x)=2x</m>, so <m>F</m> is an antiderivative of <m>f</m>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>g(x)=\cos(x)</m>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Can you think of a function whose derivative is <m>\cos(x)</m>?
+        </p>
+      </hint>
+      <answer>
+        <p>
+          <m>G(x)=\sin(x)</m>
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Let <m>G(x)=\sin(x)</m>.  Then <m>G'(x)=\cos(x)</m>, so <m>G</m> is an antiderivative of <m>g</m>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>h(x)=e^x</m>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Can you think of a function whose derivative is <m>e^x</m>?
+        </p>
+      </hint>
+      <answer>
+        <p>
+          <m>H(x)=e^x</m>
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Let <m>H(x)=e^x</m>.  Then <m>H'(x)=e^x</m>, so <m>H</m> is an antiderivative of <m>h</m>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>p(x)=x^3</m>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Can you think of a function whose derivative is <m>x^3</m>?  
+          Start by thinking of a function whose derivative is <m>4x^3</m>, and try to adjust it appropriately.
+        </p>
+      </hint>
+      <answer>
+        <p>
+          <m>P(x)=\frac{1}{4}x^4</m>
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Note that <m>\frac{d}{dx}\left[x^4\right]=4x^3</m>, so <m>\frac{d}{dx}\left[\tfrac{1}{4}x^4\right]=x^3</m>.
+          So <m>F(x)=\frac{1}{4}x^4</m> is an antiderivative of <m>f</m>.
+        </p>
+      </solution>
+    </task>
+
+
+  </exercise>
+
+  <p>
+    When you were asked above to find an antiderivative of <m>f(x)=2x</m>, you probably came up with <m>F(x)=x^2</m>.  
+    But this is not the only one!
+    Note that <m>G(x)=x^2+3</m> is also an antiderivative of <m>f</m>, since <m>G'(x)=2x</m> as well.  
+    The function <m>H(x)=x^2-3</m> is yet another antiderivative of <m>f</m>.  
+    The graphs of these three antiderivatives of <m>f</m> are drawn in <xref ref="fig-three-antiderivatives"/>.
+    Notice that all three curves have the same slope at every value of <m>x</m>, because they all have the same derivative!
+    Each of these graphs can be obtained from the others by a vertical shift.
+  </p>
+
+  <figure xml:id="fig-three-antiderivatives">
+    <caption>
+      Three different antiderivatives of <m>f(x)=2x</m>.
+    </caption>
+    <image width="50%" xml:id="three-antiderivatives">
+      <latex-image>
+        \begin{tikzpicture}
+        \begin{axis}[
+          grid style={line width=0.5pt, draw=gray!30},
+          grid=both,
+          scale only axis,
+          axis lines=middle,
+          x axis line style={&lt;->},
+          y axis line style={&lt;->},
+          ticklabel style={font=\tiny},
+          xtick distance=1,
+          ytick distance=1,
+          ymin=-3.5,
+          ymax=8.5,
+          xmin=-2.5,
+          xmax=2.5,
+          samples=50
+        ]
+        \addplot[domain=-2.1:2.1,style=&lt;->]{x^2};
+        \addplot[domain=-2.1:2.1,style=&lt;->]{x^2+3};
+        \addplot[domain=-2.1:2.1,style=&lt;->]{x^2-3};
+        \end{axis}
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+  </figure>
+  
+  <exercise>
+
+    <title>Finding multiple antiderivatives of a function</title>
+    
+    <statement>
+      <p>
+        Find three different antiderivatives of the function <m>p(x)=x^3</m>.
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        Start by finding a single antiderivative of <m>p</m>, and then add any three constants you like. 
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        In <xref ref="exc-first-antiderivatives"/>, we found that <m>P(x)=\frac{1}{4}x^4</m> is an antiderivative of <m>p</m>.  
+        <!-- But this means that <me>Q(x)=P(x)+3=\frac{1}{4}x^4+1</me> and <me>R(x)=P(x)+(-3)=\frac{1}{4}x^4-3</me> are also antiderivatives of <m>p</m>. -->
+        So 
+        <me>
+          P(x)=\tfrac{1}{4}x^4, \ \ Q(x)=\tfrac{1}{4}x^4+3, \ \ \text{and} \ \ R(x)=\tfrac{1}{4}x^4-3
+        </me>
+        are three different antiderivatives of <m>p</m>.  
+      </p>
+
+      <p>
+        Note that there are many different correct answers.  We chose the constants <m>0</m>, <m>3</m>, and <m>-3</m>, but one could choose different constants!    
+      </p>
+    </solution>
+    
+  </exercise>
+
+  <p>
+    <!-- So once we find a single antiderivative of a function <m>f</m>, we can easily find many different antiderivatives of <m>f</m>.  -->
+    So if <m>F</m> is an antiderivative of <m>f</m> and <m>C</m> is <em>any</em> constant, then <m>G(x)=F(x)+C</m> is also an antiderivative of <m>f</m>.
+    In fact, one can show that <em>every</em> antiderivative of <m>f</m> can be written in this form, at least when we restrict to any interval contained in the domain of <m>f</m>.
+  </p>
+
+  <theorem xml:id="thm-general-antiderivative">
+    <statement>
+      <p>
+        If <m>F</m> is an antiderivative of <m>f</m> on an interval <m>I</m>, i.e., if <m>F'(x)=f(x)</m> for all <m>x</m> in <m>I</m>, then every antiderivative <m>G</m> of <m>f</m> on <m>I</m> can be written in the form
+        <me>
+          G(x)=F(x)+C,
+        </me>
+        where <m>C</m> is some constant.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    This means that we can describe all antiderivatives of <m>f</m> in terms of a single antiderivative <m>F</m> and an arbitary constant <m>C</m>.
+  </p>
+
+  <definition xml:id="def-indefinite-integral">
+    <statement>
+      <p>
+        The <em>indefinite integral</em> of a function <m>f</m>, denoted <m>\dsp\int f(x)\,dx</m>, is the most general antiderivative of <m>f</m>.  
+        If <m>F</m> is an antiderivative of <m>f</m>, then 
+        <me>
+          \int f(x)\,dx = F(x)+C,
+        </me>
+        where <m>C</m> is an arbitrary constant.
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    OK, we are cheating a little bit here.  
+    If <m>f</m> is not continuous, then we can use a different constant on each "piece" of <m>f</m>.
+    But if we restrict to any interval on which <m>f</m> is defined, then we only need one constant.
+  </note>
+
+  <exercise>
+    <title>Finding indefinite integrals</title>
+    
+    <instructions>
+      Find the given indefinite integral.
+    </instructions>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int 2x\,dx</m>
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>\dsp\int 2x\,dx=x^2+C</m>, where <m>C</m> is an arbitrary constant.
+        </p>
+      </answer>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int \cos(x)\,dx</m>
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>\dsp\int \cos(x)\,dx=\sin(x)+C</m>, where <m>C</m> is an arbitrary constant.
+        </p>
+      </answer>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int \sin(x)\,dx</m>
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>\dsp\int \sin(x)\,dx=-\cos(x)+C</m>, where <m>C</m> is an arbitrary constant.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Recall that <m>\frac{d}{dx}\left[\cos(x)\right]=-\sin(x)</m>, which means that <m>\frac{d}{dx}\left[-\cos(x)\right]=\sin(x)</m>.
+          So <me>\dsp\int \sin(x)\,dx=-\cos(x)+C,</me> where <m>C</m> is an arbitrary constant.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int \sec^2(x)\,dx</m>
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>\dsp\int \sec^2(x)\,dx=\tan(x)+C</m>, where <m>C</m> is an arbitrary constant.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Recall that <m>\frac{d}{dx}\left[\tan(x)\right]=\sec^2(x)</m>.  
+          So <m>\tan(x)</m> is one particular antiderivative of <m>\sec^2(x)</m>, which means that
+          <me>
+            \dsp\int \sec^2(x)\,dx=\tan(x)+C, 
+          </me>
+          where <m>C</m> is an arbitrary constant.
+        </p>
+      </solution>
+    </task>
+  </exercise>
+
+  <note>
+    <p>
+      The notation <m>\int f(x)\,dx</m> for the antiderivative of <m>f</m> might seem strange.
+      The symbol <m>\int</m> is called an <em>integral sign</em>, and the symbol <m>dx</m> is called a <em>differential</em> in the variable <m>x</m>.
+      For now, think of the integral sign as the left delimiter for an antiderivative, and the differential as the right delimiter.
+      They work together as a pair, much like a left parenthesis and a right parenthesis.
+      The differential also tells us the variable of antidifferentiation<mdash/>we can replace <m>x</m> with any variable we like.
+    </p>
+  </note>
+
+  <exercise>
+    <title>Finding more indefinite integrals</title>
+    
+    <instructions>
+      Find the given indefinite integral.
+    </instructions>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int 3r^2\,dr</m>
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>\dsp\int 3r^2\,dr=r^3+C</m>
+        </p>
+      </answer>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int 4\cos(\theta)\,d\theta</m>
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>\dsp\int 4\cos(\theta)\,d\theta=4\sin(\theta)+C</m>
+        </p>
+      </answer>
+    </task>
+    
+  </exercise>
+
+  <subsection xml:id="subsec-antidifferentiation-formulas">
+    <title>Antidifferentiation Rules</title>
+
+    <p>
+      The process of finding an antiderivative is called <em>antidifferentiation</em>.
+      Up to this point, we've antidifferentiated by recalling differentiation rules.
+      We now observe some general rules for antidifferentiation.
+    </p>
+    
+    <exercise xml:id="exc-power-rule">
+      <title>Finding the Power Rule</title>
+      
+      <instructions>
+        Find the given indefinite integral.  Do you see a pattern?
+      </instructions>
+
+      <task>
+        <statement>
+          <p>
+            <m>\dsp\int x\,dx</m>
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>\dsp\int x\,dx=\tfrac{x^2}{2}+C</m>
+          </p>
+        </answer>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\dsp\int x^2\,dx</m>
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>\dsp\int x^2\,dx=\tfrac{x^3}{3}+C</m>
+          </p>
+        </answer>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\dsp\int x^3\,dx</m>
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>\dsp\int x^3\,dx=\tfrac{x^4}{4}+C</m>
+          </p>
+        </answer>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\dsp\int x^n\,dx</m>, where <m>n\neq -1</m> is a constant
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>\dsp\int x^n\,dx=\tfrac{x^{n+1}}{n+1}+C</m>
+          </p>
+        </answer>
+
+        <solution>
+          <p>
+            Based on our answers above, we guess that
+            <me>
+              \dsp\int x^n\,dx=\tfrac{x^{n+1}}{n+1}+C.
+            </me>
+            We can check that our guess is correct by differentiating:
+            <me>
+              \tfrac{d}{dx}\left[\tfrac{x^{n+1}}{n+1}\right]=x^n.
+            </me>
+          </p>    
+        </solution>
+      </task>
+    </exercise>
+
+    <p>
+      The rule that you picked up on in <xref ref="exc-power-rule"/> is called the <em>Power Rule</em>.  
+      In words, the Power Rule says that to antidifferentiate <m>f(x)=x^n</m>, we add one to the exponent, and divide by the new exponent.
+      So far, we've only used the Power Rule in the case that <m>n</m> is a positive integer, but it works for all real numbers <m>n\neq -1</m>.
+    </p>
+
+    <exercise>
+
+      <title>Using the Power Rule</title>
+      
+      <instructions>
+        Find the given indefinite integral.
+      </instructions>
+
+      <task>
+        <statement>
+          <p>
+            <m>\dsp\int x^{5}\,dx</m>
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>\dsp\int x^{5}\,dx=\tfrac{x^6}{6}+C</m>
+          </p>
+        </answer>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\dsp\int \tfrac{1}{x^2}\,dx</m>
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>\dsp\int \tfrac{1}{x^2}\,dx=-\tfrac{1}{x}+C</m>
+          </p>
+        </answer>
+
+        <solution>
+          <p>
+            Recall that <m>\frac{1}{x^2}=x^{-2}</m>, so we have
+            <me>
+              \dsp\int \tfrac{1}{x^2}\,dx=\dsp\int x^{-2}\,dx=\tfrac{x^{-1}}{-1}+C=-\tfrac{1}{x}+C.
+            </me>
+            When applying the Power Rule, remember that we always <em>add one</em> to the exponent, and then divide by the new exponent.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\dsp\int \sqrt{x}\,dx</m>
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>\dsp\int \sqrt{x}\,dx=\tfrac{2}{3}x^{3/2}+C</m>
+          </p>
+        </answer>
+
+        <solution>
+          <p>
+            Recall that <m>\sqrt{x}=x^{\tfrac{1}{2}}</m>, so we have
+            <me>
+              \dsp\int \sqrt{x}\,dx=\frac{x^{\tfrac{1}{2}}}{\tfrac{3}{2}}+C=\tfrac{2}{3}x^{\tfrac{3}{2}}+C
+            </me>
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\dsp\int \tfrac{1}{\sqrt{x}}\,dx</m>
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>\dsp\int \tfrac{1}{\sqrt{x}}\,dx=2\sqrt{x}+C</m>
+          </p>
+        </answer>
+
+        <solution>
+          <p>
+            We can write <m>\tfrac{1}{\sqrt{x}}=x^{-\frac{1}{2}}</m>, so we have
+            <me>
+              \dsp\int \tfrac{1}{\sqrt{x}}\,dx=\int x^{-\frac{1}{2}}\,dx=\frac{x^{\frac{1}{2}}}{\frac{1}{2}}+C=2\sqrt{x}+C.
+            </me>
+          </p>
+        </solution>
+      </task>
+      
+
+    </exercise>
+
+    <exercise>
+      <title>When The Power Rule Fails</title>
+
+      <task>
+        <statement>
+          <p>
+            Can the Power Rule be used to find <m>\dsp\int\tfrac{1}{x}\,dx</m>?
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            No.
+          </p>
+        </answer>
+
+        <solution>
+          <p>
+            Recall that <m>\frac{1}{x}=x^{-1}</m>.  
+            If we tried to apply the Power Rule, we would have to divide by zero!  
+            <!-- So we cannot use the Power Rule to find <m>\dsp\int\tfrac{1}{x}\,dx</m>. -->
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Find <m>\dsp\int \tfrac{1}{x}\,dx</m>.
+          </p>
+        </statement>
+
+        <hint>
+          <p>
+            Can you think of a function whose derivative is <m>\tfrac{1}{x}</m>?
+          </p>
+        </hint>
+
+        <answer>
+          <p>
+            <m>\dsp\int \tfrac{1}{x}\,dx=\ln|x|+C</m>,
+            where <m>|x|</m> denotes the <em>absolute value</em> of <m>x</m>.
+          </p>
+
+          <p>
+            <b>Note:</b> Your first guess might have been that <m>\int \tfrac{1}{x}\,dx=\ln(x)+C</m>, without the absolute value.
+            The minor issue with this guess is that <m>\ln(x)</m> is defined only for <m>x>0</m>, while <m>\frac{1}{x}</m> is defined for all <m>x\neq 0</m>.
+            Observe that <m>\ln|x|</m> is defined for all <m>x\neq 0</m>, 
+            and in fact one can show that <m>\frac{d}{dx}\left[\ln|x|\right]=\frac{1}{x}</m> for all <m>x\neq 0</m>; see the solutions below.
+          </p>
+        </answer>
+
+        <solution>
+          <p>
+            We will show that <m>\tfrac{d}{dx}\left[\ln|x|\right]=\frac{1}{x}</m> for all <m>x\neq 0</m>, which means that
+            <me>
+              \dsp\int \tfrac{1}{x}\,dx=\ln|x|+C.
+            </me>
+            Recall that <m>|x|</m> is defined by
+            <me>
+              |x|=
+              \begin{cases}
+                x, &amp; \text{ if } x\geq 0\text{;}\\
+                -x, &amp; \text{ if } x&lt; 0\text{.}
+              \end{cases}
+            </me>
+            So if <m>x>0</m>, then we have <m>|x|=x</m>, hence
+            <me>
+              \tfrac{d}{dx}\left[\ln|x|\right]=\tfrac{d}{dx}\left[\ln(x)\right]=\tfrac{1}{x}.
+            </me>
+            On the other hand, if <m>x&lt; 0</m>, then we have <m>|x|=-x</m>, hence
+            <md>
+              <mrow>
+                \tfrac{d}{dx}\left[\ln|x|\right]\amp =\tfrac{d}{dx}\left[\ln(-x)\right]
+              </mrow>
+              <mrow>
+                \amp=\tfrac{1}{-x}\cdot -1 \hspace{1cm} \text{(by the Chain Rule)}
+              </mrow>
+              <mrow> 
+                \amp=\tfrac{1}{x}. 
+              </mrow>  
+            </md>
+            So for all <m>x\neq 0</m>, we have <m>\tfrac{d}{dx}\left[\ln|x|\right]=\frac{1}{x}</m>, as desired.
+          </p>
+        </solution>
+
+      </task>
+
+    </exercise>
+
+    <p>
+      To verify an antidifferentiation rule of the form
+      <m>
+        \int f(x)\,dx=F(x)+C,
+      </m>
+      we simply need to check that <m>F'(x)=f(x)</m> for all <m>x</m> in the domain of <m>f</m>.
+      All of the antidifferentiation rules stated in the next theorem can be verified in this manner.
+    </p>
+
+    <theorem xml:id="thm-basic-antidifferentiation-rules">
+
+      <title>Basic Antidifferentiation Rules</title>
+      <statement>
+        <p>
+          Let <m>a</m>, <m>b</m>, and <m>n</m> be constants with <m>b>0</m>, <m>b\neq 1</m>, and <m>n\neq -1</m>.  
+          Then all of the following hold.
+          <ol>
+            <li>
+              <p>
+                <m>\dsp\int a\,dx=ax+C</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dsp\int x^n\,dx=\frac{x^{n+1}}{n+1}+C</m>
+              </p>
+            </li>
+
+          </ol>
+
+        </p> 
+      </statement>
+    </theorem>
+    
+  </subsection>
+
+
+
+
+</section>
