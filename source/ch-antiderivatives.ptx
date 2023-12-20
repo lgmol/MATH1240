@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-antiderivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Antiderivatives</title>
+
+  <introduction>
+    <p> 
+      Calculus 1 was about the process of <em>differentiation</em> and its applications.
+      Recall that differentiation is the process of finding the <em>derivative</em> of a function.
+      The derivative of a function <m>f</m> is another function <m>f'</m>, which gives the <em>rate of change</em> of <m>f</m> at every point.
+    </p>
+
+    <p>
+      We start Calculus 2 by thinking about the reverse process to differentiation.
+      That is, given a function <m>f</m>,
+      we wish to find a function <m>F</m> whose derivative is <m>f</m>.
+      Such a function <m>F</m> is called an <em>antiderivative</em> of <m>f</m>, 
+      and the process of finiding an antiderivative is called <em>antidifferentiation</em>.
+    </p>
+  
+    <p>
+      Why do we care about antidifferentiation?
+      Because antiderivatives are useful.
+      <ul>
+        <li>
+            <p>
+                Perhaps we know the (variable) velocity of an object that is moving in a straight line, and wish to know its position at a certain time.
+            </p>
+        </li>
+        <li>
+            <p>
+                Perhaps we know the rate of change of the number of daily users of an app, and wish to determine the number of daily users at a given time in the future.
+            </p>
+        </li>
+      </ul>
+      Essentially, if we have a function that describes the rate of change of a certain quantity, then we can take an antiderivative to determine the function that describes that quantity.
+    </p>
+
+    <p>
+      Antiderivatives also turn out to be useful in some much more surprising situations.
+      For instance, they can be used 
+      <ul>
+        <li>
+          <p>
+            to compute areas and volumes of various shapes and solids;
+          </p>
+        </li>
+        <li>
+          <p>
+            to compute the probabilities of certain random events in statistics; and
+          </p>
+        </li>
+        <li>
+          <p>
+            to compute quantities like displacement and work done in physics.
+          </p>
+        </li>
+      </ul>
+      The connection between antiderivatives and these problems is a surprising result called the <em>Fundamental Theorem of Calculus</em>, which we will study in <xref ref="ch-definite-integrals" />.
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-antiderivatives-and-indefinite-integrals.ptx" />
+  <xi:include href="sec-antidifferentiation-rules.ptx" />
+  <xi:include href="sec-initial-value-problems.ptx" />
+
+</chapter>
