@@ -21,6 +21,9 @@
   <!-- it defines. -->
   <macros> 
     \newcommand{\dsp}{\displaystyle}
+    \DeclareMathOperator{\arcsec}{arcsec}
+    \DeclareMathOperator{\arccot}{arccot}
+    \DeclareMathOperator{\arccsc}{arccsc}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
