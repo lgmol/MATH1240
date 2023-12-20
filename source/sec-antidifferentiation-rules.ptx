@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-antidifferentiation-rules" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Antidifferentiation Rules</title>
+
+  <p>
+    The process of finding an antiderivative is called <em>antidifferentiation</em>.
+    Up to this point, we've antidifferentiated by recalling differentiation rules.
+    We now observe some general rules for antidifferentiation.
+  </p>
+  
+  <exercise xml:id="exc-power-rule">
+    <title>Discovering the Power Rule</title>
+    
+    <instructions>
+      Find the given indefinite integral.  Do you see a pattern?
+    </instructions>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int x\,dx</m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int x\,dx=\tfrac{x^2}{2}+C</m>
+        </p>
+      </answer>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int x^2\,dx</m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int x^2\,dx=\tfrac{x^3}{3}+C</m>
+        </p>
+      </answer>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int x^3\,dx</m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int x^3\,dx=\tfrac{x^4}{4}+C</m>
+        </p>
+      </answer>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int x^n\,dx</m>, where <m>n\neq -1</m> is a constant
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int x^n\,dx=\tfrac{x^{n+1}}{n+1}+C</m>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          Based on our answers above, we guess that
+          <me>
+            \dsp\int x^n\,dx=\tfrac{x^{n+1}}{n+1}+C.
+          </me>
+          We can check that our guess is correct by differentiating:
+          <me>
+            \tfrac{d}{dx}\left[\tfrac{x^{n+1}}{n+1}\right]=x^n.
+          </me>
+        </p>    
+      </solution>
+    </task>
+  </exercise>
+
+  <p>
+    The rule that you picked up on in <xref ref="exc-power-rule"/> is called the <em>Power Rule</em>.  
+    In words, the Power Rule says that to antidifferentiate <m>f(x)=x^n</m>, we add one to the exponent, and divide by the new exponent.
+    So far, we've only used the Power Rule in the case that <m>n</m> is a positive integer, but it works for all real numbers <m>n\neq -1</m>.
+  </p>
+
+  <exercise>
+
+    <title>Using the Power Rule</title>
+    
+    <instructions>
+      Find the given indefinite integral.
+    </instructions>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int x^{5}\,dx</m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int x^{5}\,dx=\tfrac{x^6}{6}+C</m>
+        </p>
+      </answer>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int \tfrac{1}{x^2}\,dx</m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int \tfrac{1}{x^2}\,dx=-\tfrac{1}{x}+C</m>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          Recall that <m>\frac{1}{x^2}=x^{-2}</m>, so we have
+          <me>
+            \dsp\int \tfrac{1}{x^2}\,dx=\dsp\int x^{-2}\,dx=\tfrac{x^{-1}}{-1}+C=-\tfrac{1}{x}+C.
+          </me>
+          When applying the Power Rule, remember that we always <em>add one</em> to the exponent, and then divide by the new exponent.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int \sqrt{x}\,dx</m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int \sqrt{x}\,dx=\tfrac{2}{3}x^{3/2}+C</m>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          Recall that <m>\sqrt{x}=x^{\tfrac{1}{2}}</m>, so we have
+          <me>
+            \dsp\int \sqrt{x}\,dx=\frac{x^{\tfrac{1}{2}}}{\tfrac{3}{2}}+C=\tfrac{2}{3}x^{\tfrac{3}{2}}+C
+          </me>
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int \tfrac{1}{\sqrt{x}}\,dx</m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int \tfrac{1}{\sqrt{x}}\,dx=2\sqrt{x}+C</m>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          We can write <m>\tfrac{1}{\sqrt{x}}=x^{-\frac{1}{2}}</m>, so we have
+          <me>
+            \dsp\int \tfrac{1}{\sqrt{x}}\,dx=\int x^{-\frac{1}{2}}\,dx=\frac{x^{\frac{1}{2}}}{\frac{1}{2}}+C=2\sqrt{x}+C.
+          </me>
+        </p>
+      </solution>
+    </task>
+    
+
+  </exercise>
+
+  <exercise>
+    <title>When The Power Rule Fails</title>
+
+    <task>
+      <statement>
+        <p>
+          Can the Power Rule be used to find <m>\dsp\int\tfrac{1}{x}\,dx</m>?
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          No.
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          Recall that <m>\frac{1}{x}=x^{-1}</m>.  
+          If we tried to apply the Power Rule, we would have to divide by zero!  
+          <!-- So we cannot use the Power Rule to find <m>\dsp\int\tfrac{1}{x}\,dx</m>. -->
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          Find <m>\dsp\int \tfrac{1}{x}\,dx</m>.
+        </p>
+      </statement>
+
+      <hint>
+        <p>
+          Can you think of a function whose derivative is <m>\tfrac{1}{x}</m>?
+        </p>
+      </hint>
+
+      <answer>
+        <p>
+          <m>\dsp\int \tfrac{1}{x}\,dx=\ln|x|+C</m>,
+          where <m>|x|</m> denotes the <em>absolute value</em> of <m>x</m>.
+        </p>
+
+        <p>
+          <b>Note:</b> Your first guess might have been that <m>\int \tfrac{1}{x}\,dx=\ln(x)+C</m>, without the absolute value.
+          The minor issue with this guess is that <m>\ln(x)</m> is defined only for <m>x>0</m>, while <m>\frac{1}{x}</m> is defined for all <m>x\neq 0</m>.
+          Observe that <m>\ln|x|</m> is defined for all <m>x\neq 0</m>, 
+          and in fact one can show that <m>\frac{d}{dx}\left[\ln|x|\right]=\frac{1}{x}</m> for all <m>x\neq 0</m>; see the solutions below.
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          We will show that <m>\tfrac{d}{dx}\left[\ln|x|\right]=\frac{1}{x}</m> for all <m>x\neq 0</m>, which means that
+          <me>
+            \dsp\int \tfrac{1}{x}\,dx=\ln|x|+C.
+          </me>
+          Recall that <m>|x|</m> is defined by
+          <me>
+            |x|=
+            \begin{cases}
+              x, &amp; \text{ if } x\geq 0\text{;}\\
+              -x, &amp; \text{ if } x&lt; 0\text{.}
+            \end{cases}
+          </me>
+          So if <m>x>0</m>, then we have <m>|x|=x</m>, hence
+          <me>
+            \tfrac{d}{dx}\left[\ln|x|\right]=\tfrac{d}{dx}\left[\ln(x)\right]=\tfrac{1}{x}.
+          </me>
+          On the other hand, if <m>x&lt; 0</m>, then we have <m>|x|=-x</m>, hence
+          <md>
+            <mrow>
+              \tfrac{d}{dx}\left[\ln|x|\right]\amp =\tfrac{d}{dx}\left[\ln(-x)\right]
+            </mrow>
+            <mrow>
+              \amp=\tfrac{1}{-x}\cdot -1 \hspace{1cm} \text{(by the Chain Rule)}
+            </mrow>
+            <mrow> 
+              \amp=\tfrac{1}{x}. 
+            </mrow>  
+          </md>
+          So for all <m>x\neq 0</m>, we have <m>\tfrac{d}{dx}\left[\ln|x|\right]=\frac{1}{x}</m>, as desired.
+        </p>
+      </solution>
+
+    </task>
+
+  </exercise>
+
+  <p>
+    To verify an antidifferentiation rule of the form
+    <m>
+      \int f(x)\,dx=F(x)+C,
+    </m>
+    we simply need to check that <m>F'(x)=f(x)</m> for all <m>x</m> in the domain of <m>f</m>.
+    All of the antidifferentiation rules stated in the next theorem can be verified in this manner.
+  </p>
+
+  <theorem xml:id="thm-basic-antidifferentiation-rules">
+
+    <title>Basic Antidifferentiation Rules</title>
+    <statement>
+      <p>
+        <ol>
+          <li xml:id="basic-rule-const">
+            <p>
+              <m>
+                \dsp\int a\,dx=ax+C
+              </m>, where <m>a</m> is a constant
+            </p>
+          </li>
+          <li xml:id="basic-rule-power">
+            <p>
+              <m>
+                \dsp\int x^n\,dx=\frac{x^{n+1}}{n+1}+C
+              </m>, where <m>n\neq -1</m> is a constant
+            </p>
+          </li>
+          <li xml:id="basic-rule-ln">
+            <p>
+              <m>
+                \dsp\int \frac{1}{x}\,dx=\ln|x|+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-exp">
+            <p>
+              <m>
+                \dsp\int e^x\,dx=e^x+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-expb">
+            <p>
+              <m>
+                \dsp\int b^x\,dx=\frac{b^x}{\ln(b)}+C
+              </m>, where <m>b\neq 1</m> is a positive constant 
+            </p>
+          </li>
+          <li xml:id="basic-rule-cos">
+            <p>
+              <m>
+                \dsp\int\cos(\theta)\,d\theta=\sin(\theta)+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-sin">
+            <p>
+              <m>
+                \dsp\int \sin(\theta)\,d\theta=-\cos(\theta)+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-sec2">
+            <p>
+              <m>
+                \dsp\int\sec^2(\theta)\,d\theta=\tan(\theta)+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-csc2">
+            <p>
+              <m>
+                \dsp\int\csc^2(\theta)\,d\theta=-\cot(\theta)+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-sectan">
+            <p>
+              <m>
+                \dsp\int\sec(\theta)\tan(\theta)\,d\theta=\sec(\theta)+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-csccot">
+            <p>
+              <m>
+                \dsp\int\csc(\theta)\cot(\theta)\,d\theta=-\csc(\theta)+C
+              </m>
+            </p>
+          </li>
+          <!-- <li xml:id="basic-rule-tan">
+            <p>
+              <m>
+                \dsp\int\tan(\theta)\,d\theta=\ln|\sec(\theta)|+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-cot">
+            <p>
+              <m>
+                \dsp\int\cot(\theta)\,d\theta=\ln|\sin(\theta)|+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-sec">
+            <p>
+              <m>
+                \dsp\int \sec(\theta)\,d\theta=\ln|\sec(\theta)+\tan(\theta)|+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-csc">
+            <p>
+              <m>
+                \dsp\int\csc(\theta)\,d\theta=\ln|\csc(\theta)-\cot(\theta)|+C
+              </m>
+            </p>
+          </li> -->
+          <li xml:id="basic-rule-arctan">
+            <p>
+              <m>
+                \dsp\int\frac{1}{1+x^2}\,dx=\arctan(x)+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-arcsin">
+            <p>
+              <m>
+                \dsp\int\frac{1}{\sqrt{1-x^2}}\,dx=\arcsin(x)+C
+              </m>
+            </p>
+          </li>
+          <li xml:id="basic-rule-arcsec">
+            <p>
+              <m>
+                \dsp\int \frac{1}{x\sqrt{x^2-1}}\,dx=\arcsec(x)+C
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p> 
+    </statement>
+
+  </theorem>
+
+  <p>
+    We used the variables <m>x</m> and <m>\theta</m> to state our basic antidifferentiation rules, but the rules hold for any variable.  
+    Remember that the differential specifies the variable of antidifferentiation.  
+    So for example, using <xref ref="basic-rule-const" text="local">Basic Rule</xref>, we have
+    <me>
+      \int 5\,dx=5x+C
+    </me>
+    and
+    <me>
+      \int 5\,du=5u+C.
+    </me>
+    
+  </p>
+
+  <exercise>
+    <title>
+      Using basic antidifferentiation rules
+    </title>
+
+    <instructions>
+      Find the given indefinite integral.
+    </instructions>
+    
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int\frac{1}{1+u^2}\,du</m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int\frac{1}{1+u^2}\,du=\arctan(u)+C</m>, by <xref ref="basic-rule-arctan" text="local">Basic Rule</xref>
+        </p>
+      </answer>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int\sec(x)\tan(x)\,dx</m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int\sec(x)\tan(x)\,dx=\sec(x)+C</m>, by <xref ref="basic-rule-sectan" text="local">Basic Rule</xref>
+        </p>
+      </answer>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\dsp\int\pi\,dx</m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int\pi\,dx=\pi x+C</m>, by <xref ref="basic-rule-const" text="local">Basic Rule</xref>
+        </p>
+      </answer>
+    </task>
+    
+  </exercise>
+
+  <p>
+    Now we derive some antidifferentiation rules for functions that are built up from simpler functions.  
+    Remember that we did the same for differentiation rules in Calculus 1, with the Constant Multiple, Sum, Difference, Product, Quotient, and Chain Rules.
+    We start with the Constant Multiple Rule, Sum, and Difference Rules for antidifferentiation.
+  </p>
+
+  <theorem xml:id="thm-constant-multiple-rule">
+
+    <title>The Constant Multiple Rule</title>
+    
+    <statement>
+      <p>
+        Let <m>f</m> be a function with antiderivative <m>F</m>, and let <m>a</m> be a constant.  Then
+        <me>
+          \int a f(x)\,dx= aF(x)+C.
+        </me>
+        Alternatively, we can write
+        <men xml:id="constant-multiple-rule">
+          \int a f(x)\,dx=a\int f(x)\,dx.
+        </men>
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Since <m>F</m> is an antiderivative of <m>f</m>, we have <m>\tfrac{d}{dx}\left[F(x)\right]=f(x)</m>.  
+      Hence, by the Constant Multiple Rule for differentiation, we have 
+      <me>
+        \tfrac{d}{dx}\left[aF(x)\right]=a\tfrac{d}{dx}\left[F(x)\right]=af(x).
+      </me>
+      Therefore, we conclude that <m>\dsp\int a f(x)\,dx= aF(x)+C</m>.
+    </p>
+  </proof>
+
+  <theorem xml:id="thm-sum-rule">
+
+    <title>The Sum Rule</title>
+    
+    <statement>
+      <p>
+        Let <m>f</m> and <m>g</m> be functions with antiderivatives <m>F</m> and <m>G</m>, respectively.  Then
+        <me>
+          \int f(x)+ g(x)\,dx= F(x)+G(x)+C.
+        </me>
+        Alternatively, we can write
+        <men xml:id="sum-rule">
+          \int f(x)+ g(x)\,dx=\int f(x)\,dx+\int g(x)\,dx.
+        </men>
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Since <m>F</m> and <m>G</m> are antiderivatives of <m>f</m> and <m>g</m>, respectively, we have <m>\tfrac{d}{dx}\left[F(x)\right]=f(x)</m> and <m>\tfrac{d}{dx}\left[G(x)\right]=g(x)</m>.  
+      Hence, by the Sum Rule for differentiation, we have 
+      <me>
+        \tfrac{d}{dx}\left[F(x)+G(x)\right]=\tfrac{d}{dx}\left[F(x)\right]+\tfrac{d}{dx}\left[G(x)\right]=f(x)+g(x).
+      </me>
+      Therefore, we conclude that <m>\dsp\int f(x)+g(x)\,dx= F(x)+G(x)+C</m>.
+    </p>
+  </proof>
+
+  <p>
+    Together, the Sum Rule and the Constant Multiple Rule (with the constant <m>-1</m>) give us the <em>Difference Rule</em>:
+    <men xml:id="difference-rule">
+      \int f(x)-g(x)\,dx=\int f(x)\,dx-\int g(x)\,dx.
+    </men>
+  </p>
+
+  <exercise>
+
+    <title>Using the Constant Multiple, Sum, and Difference Rules</title>
+
+    <instructions>
+      Find the given indefinite integral.
+    </instructions>
+
+    <task>
+      <statement>
+        <p>
+          <m>
+            \dsp\int \cos(\theta)+\sin(\theta)\,d\theta
+          </m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int \cos(\theta)+\sin(\theta)\,d\theta=\sin(\theta)-\cos(\theta)+C</m>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          By the <xref ref="sum-rule" text="custom">Sum Rule</xref>, <xref ref="basic-rule-cos" text="local">Basic Rule</xref>, and <xref ref="basic-rule-sin" text="local">Basic Rule</xref> we have
+          <md>
+            <mrow>\int \cos(\theta)+\sin(\theta)\,d\theta\amp=\int\cos(\theta)\,d\theta+\int\sin(\theta)\,d\theta</mrow>
+            <mrow>\amp=\sin(\theta)-\cos(\theta)+C.</mrow>
+          </md>
+          Notice that even though we had two indefinite integrals on the right-hand-side, we write just one constant of integration <m>C</m>.
+          One can think of <m>C</m> as the sum of two separate constants of integration <m>C_1</m> and <m>C_2</m>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>
+            \dsp\int 4u^2\,du
+          </m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int 4u^2\,du=\frac{4}{3}u^3+C</m>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          By the <xref ref="constant-multiple-rule" text="custom">Constant Multiple Rule</xref> and <xref ref="basic-rule-power" text="local">Basic Rule</xref>, we have
+          <me>
+            \int 4u^2\,du=4\int u^2\,du=4\cdot \frac{u^3}{3}+C=\frac{4}{3}u^3+C.
+          </me>
+          Notice again that we use the simple constant of integration <m>C</m>.
+          One can think of <m>C</m> as <m>4C_1</m>, where <m>C_1</m> is the constant of integration from <m>\int u^2\,du</m>.
+        </p>
+      </solution>
+    </task>
+  </exercise>
+  
+  
+
+</section>
+
