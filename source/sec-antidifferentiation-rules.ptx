@@ -624,6 +624,89 @@
         </p>
       </solution>
     </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>
+            \dsp\int 2e^x-6x\,dx
+          </m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int 2e^x-6x\,dx=2e^x-3x^2+C</m>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          <md>
+            <mrow> \int 2e^x-6x\,dx \amp = \int 2e^x\,dx-\int 6x\,dx \amp \text{by the }<xref ref="difference-rule" text="custom">Difference Rule</xref>\amp</mrow>
+            <mrow> \amp = 2\int e^x\,dx-6\int x\,dx \amp \text{by the }<xref ref="constant-multiple-rule" text="custom">Constant Multiple Rule</xref>\amp</mrow>
+            <mrow> \amp = 2e^x-3x^2+C \amp \text{by Basic Rules }<xref ref="basic-rule-power" text="local"></xref>\text{ and }<xref ref="basic-rule-exp" text="local"></xref>\amp</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>
+            \dsp\int \sec(\theta)\left(\sec(\theta)+\tan(\theta)\right)\,d\theta
+          </m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int \sec(\theta)\left(\sec(\theta)+\tan(\theta)\right)\,d\theta=\tan(\theta)+\sec(\theta)+C</m>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          We first apply the distributive law, so that we can use our rules for antidifferentiation:
+          <md>
+            <mrow> \amp \int  \sec(\theta)\left(\sec(\theta)+\tan(\theta)\right)\,d\theta </mrow>
+            <mrow> \amp = \int \sec^2(\theta)+\sec(\theta)\tan(\theta)\,d\theta \amp \text{by algebra}\amp</mrow>
+            <mrow> \amp = \int\sec^2(\theta)\,d\theta+\int\sec(\theta)\tan(\theta)\,d\theta \amp \text{by the }<xref ref="sum-rule" text="custom">Sum Rule</xref>\amp</mrow>
+            <mrow> \amp = \tan(\theta)+\sec(\theta)+C \amp \text{by Basic Rules }<xref ref="basic-rule-sec2" text="local"></xref>\text{ and }<xref ref="basic-rule-sectan" text="local"></xref>\amp</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>
+            \dsp\int \frac{x^3-2x+1}{x}\,dx
+          </m>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <m>\dsp\int \frac{x^3-2x+1}{x}\,dx=\frac{1}{3}x^3-2x+\ln|x|+C</m>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          We first divide through by <m>x</m>, so that we can use our rules for antidifferentiation:
+          <md>
+            <mrow> \int \frac{x^3-2x+1}{x}\,dx\amp = \int x^2-2+\frac{1}{x}\,dx</mrow>
+            <mrow> \amp = \int x^2\,dx-\int 2\,dx+\int\frac{1}{x}\,dx </mrow>
+            <mrow> \amp = \frac{1}{3}x^3-2x+\ln|x|+C</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+
+
   </exercise>
   
   
