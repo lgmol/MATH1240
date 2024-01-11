@@ -139,7 +139,7 @@
     <caption>
       Three different antiderivatives of <m>f(x)=2x</m>.
     </caption>
-    <image width="50%" xml:id="three-antiderivatives">
+    <image width="50%" xml:id="tikz-three-antiderivatives">
       <latex-image>
         \begin{tikzpicture}
         \begin{axis}[
@@ -235,7 +235,7 @@
         <me>
           \dsp\int f(x)\,dx,
         </me> 
-        is the most general antiderivative of <m>f</m> on any interval.
+        is the most general antiderivative of <m>f</m> on any given interval.
       </p>
       <p>
         If <m>F</m> is a particular antiderivative of <m>f</m>, then 
@@ -327,7 +327,7 @@
   </exercise>
 
     <p>
-      In the notation <m>\int f(x)\,dx</m>, the symbol <m>\int</m> is called an <em>integral sign</em>, and the symbol <m>dx</m> is called a <em>differential</em> in the variable <m>x</m>.
+      In the notation <m>\int f(x)\,dx</m>, the symbol <m>\int</m> is called an <em>integral sign</em>, the function <m>f(x)</m> is called the <em>integrand</em>, and the symbol <m>dx</m> is called a <em>differential</em> in the variable <m>x</m>.
       For now, think of the integral sign as the left delimiter of an indefinite integral, and the differential as the right delimiter.
       They work together as a pair, much like a left parenthesis and a right parenthesis.
       The differential also tells us the variable of antidifferentiation<mdash/>we can replace <m>x</m> with any variable we like.
