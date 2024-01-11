@@ -4,4 +4,268 @@
   
   <title>Initial Value Problems</title>
 
+  <p>
+    Suppose that we know the derivative <m>f'</m> of some function <m>f</m>.
+    Then we know that <m>f</m> is <em>some</em> antiderivative of <m>f'</m>.
+    But which one is it?  The function <m>f'</m> has many different antiderivatives, corresponding to different constants of integration.
+    If we also know some <em>initial value</em> of <m>f</m>, such as <m>f(0)</m>, then we can determine <m>f(x)</m> for all <m>x</m> (as long as <m>f</m> is continuous). 
+  </p>
+
+  <example>
+    <title>An Initial Value Problem</title>
+  
+    <statement>
+      <p>
+        Suppose that <m>f'(x)=3x^2</m> and <m>f(0)=1</m>.  Find <m>f(x)</m>.
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        <m>
+          f(x)=x^3+1
+        </m>
+      </p>
+    </answer>
+
+    <solution>
+      <p>
+        Antidifferentiating, we find
+        <men xml:id="eqn-ivp">
+          f(x)=x^3+C
+        </men>
+        for some constant <m>C</m>.  
+      </p>
+
+      <p>
+        In order to find <m>C</m>, we use our initial value <m>f(0)=1</m>.
+        Substituting <m>x=0</m> on both sides of <xref ref="eqn-ivp"/>, we find <m>C=1</m>.  So we conclude that
+        <me>
+          f(x)=x^3+1.
+        </me>
+      </p>
+
+      <p>
+        The graphs of several antiderivatives of <m>f'</m> are drawn in <xref ref="fig-ivp"/>.  
+        Note that <m>f(x)=x^3+1</m> (drawn in red) is the only antiderivative that goes through the point <m>(0,1)</m>, 
+        i.e., it is the only antiderivative whose value at <m>0</m> is <m>1</m>.
+      </p>
+
+      <figure xml:id="fig-ivp">
+        <caption>
+          Some antiderivatives of <m>f'(x)=3x^2</m>.
+        </caption>
+        <image width="50%" xml:id="tikz-ivp">
+          <latex-image>
+            \begin{tikzpicture}
+            \begin{axis}[
+              grid style={line width=0.5pt, draw=gray!30},
+              grid=both,
+              scale only axis,
+              axis lines=middle,
+              x axis line style={&lt;->},
+              y axis line style={&lt;->},
+              ticklabel style={font=\tiny},
+              xtick distance=1,
+              ytick distance=1,
+              ymin=-3.5,
+              ymax=5.5,
+              xmin=-1.5,
+              xmax=1.5,
+              samples=50
+            ]
+            \addplot[domain=-1.4:1.4,style=&lt;->,dashed]{x^3-0.5};
+            \addplot[domain=-1.4:1.4,style=&lt;->,dashed]{x^3};
+            \addplot[domain=-1.4:1.4,style=&lt;->,dashed]{x^3+0.5};
+            \addplot[domain=-1.4:1.4,style=&lt;->,red]{x^3+1};
+            \addplot[domain=-1.4:1.4,style=&lt;->,dashed]{x^3+1.5};
+            \addplot[domain=-1.4:1.4,style=&lt;->,dashed]{x^3+2};
+            \addplot[domain=-1.4:1.4,style=&lt;->,dashed]{x^3+2.5};
+            \addplot[only marks, mark=*] coordinates {(0, 1)};
+            \end{axis}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </solution>
+  </example>
+
+  <example>
+    <title>
+      Another Initial Value Problem
+    </title>
+    
+    <statement>
+      <p>
+        Suppose that <m>g''(x)=\frac{-3}{x^2}</m>, and that <m>g'(1)=2</m> and <m>g(1)=0</m>.  Find <m>g(x)</m> for all <m>x>0</m>.
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        <m>
+          g(x)=3\ln(x)-x+1 \ \ \text{for all } x>0.
+        </m>
+      </p>
+    </answer>
+
+    <solution>
+      <p>
+        Throughout, we assume that <m>x>0</m>, so that we do not have to worry about the fact that <m>g''(x)</m> is undefined at <m>x=0</m>.
+        Note that <m>g''(x)=-3x^{-2}</m>, so antidifferentiating gives
+        <me>
+          g'(x)= 3x^{-1}+C,
+        </me>
+        or equivalently
+        <men xml:id="eqn-ivp-twice">
+          g'(x)=\frac{3}{x}+C,
+        </men>
+        where <m>C</m> is some constant.  Since <m>g'(1)=2</m>, substituting <m>x=1</m> into <xref ref="eqn-ivp-twice"/> gives
+        <me>
+          2=3+C,
+        </me>
+        which we solve to find <m>C=-1</m>.  So we have <m>g'(x)=\frac{3}{x}-1</m> for all <m>x>0</m>.      
+      </p>
+
+      <p>
+        Antidifferentiating once more, we find
+        <men xml:id="eqn-ivp-twice-again">
+          g(x)=3\ln(x)-x+D,
+        </men>
+        where <m>D</m> is some constant.  
+        (Note that it is safe to use <m>\ln(x)</m> instead of <m>\ln|x|</m> here, since <m>x>0</m>.)
+        Since <m>g(1)=0</m>, substituting <m>x=1</m> into <xref ref="eqn-ivp-twice-again" /> gives
+        <me>
+          0=3\ln(1)-1+D
+        </me>
+        Since <m>\ln(1)=0</m>, we find <m>D=1</m>.  So we conclude that <m>g(x)=3\ln(x)-x+1</m> for all <m>x>0</m>.
+      </p>
+    </solution>
+    
+    
+  </example>
+
+  <p>
+    Recall that if <m>s(t)</m> describes the position of an object moving in a straight line at time <m>t</m>, 
+    then the <em>velocity</em> of the object at time <m>t</m> is given by
+    <me>
+      v(t)=s'(t),
+    </me>
+    and the <em>acceleration</em> of the object at time <m>t</m> is given by
+    <me>
+      a(t)=v'(t).
+    </me>
+  </p>
+
+  <example xml:id="ex-throwing-stones">
+
+    <title>Throwing Stones</title>
+    
+    <statement>
+      <p>
+        Lucas is visiting Spahats Creek Falls in Wells Gray Provincial Park.  
+        He throws a stone straight up off the edge of the viewing platform with an initial velocity of <m>12\text{m}/\text{s}</m>, 
+        and watches it fall to the bottom of the canyon, which is <m>80\text{m}</m> below the platform.
+        Let <m>s(t)</m> be the height of the stone, measured in metres above the bottom of the canyon, after <m>t</m> seconds.
+        Assume that the acceleration of the stone due to gravity is <m>-9.8\text{m}/\text{s}^2</m>. 
+        <ol marker="(a)">
+          <li>
+            <p>
+              Find <m>s(t)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              How long does it take for the stone to hit the bottom of the canyon?
+            </p>
+          </li>
+          <li>
+            <p>
+              How fast is the stone travelling when it hits the bottom of the canyon?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              <m>
+                s(t)=-4.9t^2+12t+80
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Approximately <m>5.45</m> seconds
+            </p>
+          </li>
+          <li>
+            <p>
+              Approximately <m>43.38\text{m}/\text{s}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
+
+    <solution>
+      <p>
+        Let <m>v(t)</m> and <m>a(t)</m> represent the velocity and the acceleration of the stone, respectively.
+        We know that <m>v(t)=s'(t)</m>, and <m>a(t)=s''(t)</m>.
+        Since acceleration due to gravity is a constant <m>-9.8\text{m}/\text{s}^2</m>, we have
+        <me>
+          a(t)=-9.8.
+        </me>
+        Antidifferentiating, we find
+        <men xml:id="ivp-velocity">
+          v(t)=-9.8t+C,
+        </men>
+        where <m>C</m> is some constant.  
+        Since the stone is thrown with an initial velocity of <m>12\text{m}/\text{s}</m>, we must have <m>v(0)=12</m>.
+        Substituting <m>t=0</m> into <xref ref="ivp-velocity"/>, we find <m>C=12</m>.  Therefore, we have
+        <me>
+          v(t)=-9.8t+12.
+        </me>
+        Antidifferentiating again, we find
+        <men xml:id="ivp-acceleration">
+          s(t)=-4.9t^2+12t+D,
+        </men>
+        where <m>D</m> is some constant.  
+        Since the stone in thrown from an initial height of <m>80\text{m}</m>, we must have <m>s(0)=80</m>.
+        Substituting <m>t=0</m> into <xref ref="ivp-acceleration"/>, we find <m>D=80</m>.  Therefore, we have
+        <me>
+          s(t)=-4.9t^2+12t+80.
+        </me>
+      </p>
+
+      <p>
+        For part (b), we must solve <m>s(t)=0</m>.  
+        Using the quadratic formula, we find two solutions: <m>t_1\approx 5.45</m> and <m>t_2\approx -3.00</m>.
+        Of course, in the context of this problem, only the positive solution makes sense.  
+        (Remember that the stone is not thrown until time <m>t=0</m>.)
+        So we conclude that the stone hits the bottom of the canyon approximately <m>5.45</m> seconds after it is thrown.
+      </p>
+
+      <p>
+        For part (c), we substitute the solution <m>t_1\approx 5.45</m> into the velocity function:
+        <me>
+          v(t_1)=-9.8t_1+12\approx -43.38.
+        </me>
+        So the stone is travelling at a speed of approximately <m>43.38</m> metres per second when it hits the bottom of the canyon.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    The initial value problems that we studied in this section belong to an area of mathematics called <em>differential equations</em>.
+    A <em>differential equation</em> is an equation that involves one or more derivatives of a function <m>f</m>.
+    Given a differential equation involving derivatives of a function <m>f</m>, and possibly some other information about <m>f</m>, the goal is to describe the function <m>f</m> itself.
+    We will see more differential equations in <xref ref="ch-differential-equations"/>. 
+  </p>
+
+
 </section>
