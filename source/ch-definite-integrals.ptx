@@ -6,11 +6,17 @@
 
   <introduction>
     <p>
-        Introduction to definite integrals.
+      We begin this chapter by studying the problem of finding the area under a curve.
+      The <em>Fundamental Theorem of Calculus</em> describes a surprising connection between this problem and antiderivatives.
+      It turns out that antiderivatives are the key to solving the area problem!
     </p>
   </introduction>
 
   <!-- include sections -->
-  <!-- <xi:include href="sec-antiderivatives-and-indefinite-integrals.ptx" /> -->
+  <xi:include href="sec-sigma-notation.ptx" />
+  <xi:include href="sec-the-area-under-a-curve.ptx" />
+  <xi:include href="sec-definite-integrals.ptx" />
+  <xi:include href="sec-the-fundamental-theorem-of-calculus.ptx" />
+  <xi:include href="sec-integration-by-substitution.ptx" />
 
 </chapter>
