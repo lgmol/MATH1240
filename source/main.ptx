@@ -13,6 +13,10 @@
     <!-- Include chapters -->
     <xi:include href="./ch-antiderivatives.ptx" />
     <xi:include href="./ch-definite-integrals.ptx" />
+    <xi:include href="./ch-applications-of-integration.ptx" />
+    <xi:include href="./ch-techniques-of-integration.ptx" />
+    <xi:include href="./ch-differential-equations.ptx" />
+    
 
 
     <!-- Include backmatter -->
